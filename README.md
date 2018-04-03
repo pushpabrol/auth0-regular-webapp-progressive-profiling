@@ -73,7 +73,7 @@ Ensure this is associated with your Client.
 
 #### Rules Setup
 
-Copy the rule `rules/check-sms-account-linked.js` into a new Rule in the Dashboard.
+Copy the rule `rules/checkProfileIncomplete-rule.js` into a new Rule in the Dashboard.
 
 Name the Rule appropriate eg. `Check SMS Account Linked`
 
@@ -122,7 +122,7 @@ up](https://auth0.com/signup) for free.
 cp .env.example .env
 ```
 
-## Enable Cross Origin Authentication
+## Enable Cross Origin Authentication ( For embedded login only!)
 
 In order to be able to log-in with user and password you need to make sure you
 take into account the details explained in the [Cross Origin Authentication
