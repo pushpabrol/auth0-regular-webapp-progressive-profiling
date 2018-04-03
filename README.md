@@ -75,10 +75,9 @@ Ensure this is associated with your Client.
 
 Copy the rule `rules/checkProfileIncomplete-rule.js` into a new Rule in the Dashboard.
 
-Name the Rule appropriate eg. `Check SMS Account Linked`
+Name the Rule appropriate eg. `Check Profile Incomplete`
 
-You will have to adjust the 2nd line to match your own client ID
-
+You will have to adjust the code in the rule to match your own client ID
 
 #### Authorize Client to call the Management API
 
