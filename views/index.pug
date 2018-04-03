@@ -1,0 +1,17 @@
+extends layout
+
+block content
+  .w3-container
+    if loggedIn
+      h4 You are logged in!
+    else
+      h4 You are not logged in! Please #[a(href="/clogin") Log In] to continue.
+    div
+      button(id="check-session") Check Session
+
+  script.
+
+    $('#check-session').on('click', function(e) {
+      e.preventDefault();
+      window.location = "#{env.APP_BASE_URL}/api/session";
+    });
