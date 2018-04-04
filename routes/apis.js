@@ -45,11 +45,9 @@ router.get('/contacts', ensureLoggedIn('/auth'), ensureTokenValid, function (req
 
 router.post('/updateuser', ensureLoggedIn('/auth'), ensureTokenValid, function (req, res, next) {
 
-console.log(req.body);
-
   tools.managementApi.getClient({ domain: `${process.env.AUTH0_DOMAIN}`, clientId: `${process.env.AUTH0_CLIENT_ID}`, clientSecret: `${process.env.AUTH0_CLIENT_SECRET}` })
   .then(function(client) {
-    client.users.updateUserMetadata({id : req.user._json["sub"]}, {"Name" : "Pushp Abrol", "Age" : 42}, function (err, user){
+    client.users.updateUserMetadata({id : req.user._json["sub"]}, {"Name" : req.body.Name, "Age" : req.body.Age}, function (err, user){
       if(!err)res.redirect(`${process.env.APP_BASE_URL}/clogin?prompt=none`);
       else res.json(err);
     
